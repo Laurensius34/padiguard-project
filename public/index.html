@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadiGuard - Deteksi Dini Hama Padi</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .bg-subtle-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#22c55e 0.5px, transparent 0.5px), radial-gradient(#22c55e 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.03;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 transition-colors duration-300 dynamic-theme bg-subtle-pattern">
+
+    <div id="app" class="min-h-screen flex flex-col"></div>
+
+    <script src="/src/utils/LanguagePack.js"></script>
+    <script src="/src/utils/StateManager.js"></script>
+    <script src="/src/services/OfflineExpertSystem.js"></script>
+    <script src="/src/services/OnlineAIService.js"></script>
+    <script src="/src/components/Navbar.js"></script>
+    <script src="/src/components/Hero.js"></script>
+    <script src="/src/components/Features.js"></script>
+    <script src="/src/components/DetectionDashboard.js"></script>
+    <script src="/src/components/ResultCard.js"></script>
+    <script src="/src/components/HistoryList.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inisialisasi Deteksi Jaringan secara Real-time
+            StateManager.checkNetworkStatus();
+            window.addEventListener('online', () => StateManager.updateNetwork(true));
+            window.addEventListener('offline', () => StateManager.updateNetwork(false));
+
+            // Render aplikasi utama
+            StateManager.renderApp();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>
