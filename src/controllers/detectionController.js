@@ -44,13 +44,10 @@ Anda WAJIB memberikan output respon HANYA dalam format JSON yang valid, bersih, 
     const responseText = response.text.trim();
 
     // Membersihkan jika Gemini secara tidak sengaja membungkusnya dalam markdown
-    const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
-
-    if (!jsonMatch) {
-      throw new Error("Format JSON dari Gemini tidak valid");
-    }
-
-    const resultData = JSON.parse(jsonMatch[0]);
+    const cleanJsonString = responseText
+      .replace(/^```json\s*/i, "")
+      .replace(/\s*```$/, "");
+    const resultData = JSON.parse(cleanJsonString);
 
     return res.status(200).json({ success: true, data: resultData });
   } catch (error) {
