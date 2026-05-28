@@ -11,23 +11,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
 app.use(express.static(path.join(__dirname, "public")));
 
 // API Routes
 app.use("/api", apiRoutes);
 
-// Fallback to SPA Index
+// SPA fallback
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-if (process.env.NODE_ENV !== 'production') {
+// hanya jalan di lokal
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 3000;
+
   app.listen(PORT, () => {
-    console.log(`PadiGuard running successfully on http://localhost:${PORT}`);
+    console.log(
+      `PadiGuard running successfully on http://localhost:${PORT}`
+    );
   });
 }
 
