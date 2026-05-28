@@ -23,7 +23,7 @@ const ResultCard = {
             </span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
             <div class="p-4 rounded-xl border ${state.isDarkMode ? "bg-slate-950/60 border-slate-800/60" : "bg-zinc-100/50 border-zinc-200/40"}">
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1">Jenis Hama/Penyakit</span>
                 <span class="text-lg font-black ${state.isDarkMode ? "text-slate-100" : "text-slate-900"}">${res.nama_hama}</span>
@@ -117,7 +117,9 @@ const ResultCard = {
         <body>
           <div class="max-w-3xl mx-auto">
             <div class="mb-6 pb-4 border-b-2 border-emerald-600 flex justify-between items-center">
-              <h1 class="text-xl font-black text-slate-900">🌾 PADI<span class="text-emerald-600">GUARD</span> REPORT</h1>
+              <h1 class="text-xl font-black text-slate-900">
+              <img src="../img/logo-padiguard.png" alt="PadiGuard Logo" class="w-10 h-10 rounded-full inline-block mr-2">
+              PADI<span class="text-emerald-600">GUARD</span> REPORT</h1>
               <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Sistem Pakar Komoditas Padi</p>
             </div>
             ${clonedElement.innerHTML}

@@ -1,7 +1,7 @@
 const DetectionDashboard = {
   render(state, lang) {
     return `
-            <section id="dashboard-deteksi" class="relative min-h-screen flex flex-col justify-center py-24 w-full ${state.isDarkMode ? "bg-slate-950" : "bg-gradient-to-br from-zinc-50 via-emerald-50/20 to-zinc-100/80"}">
+            <section id="dashboard-deteksi" class="relative min-h-screen flex flex-col justify-center py-24 w-full  ${state.isDarkMode ? "bg-slate-950" : "bg-gradient-to-br from-zinc-50 via-emerald-50/20 to-zinc-100/80"}">
     
     <div class="max-w-4xl mx-auto px-4 sm:px-6 w-full relative z-10">
         
@@ -26,7 +26,7 @@ const DetectionDashboard = {
             </div>
         </div>
 
-        <div class="rounded-3xl border shadow-2xl overflow-hidden transition-all duration-300 ${state.isDarkMode ? "bg-slate-900 border-slate-800/80 shadow-slate-950/50" : "bg-white/80 border-zinc-200/60 shadow-zinc-200/50 backdrop-blur-md"}">
+        <div class="rounded-3xl border shadow-2xl overflow-hidden transition-all shadow-2xl duration-300 ${state.isDarkMode ? "bg-slate-900 border-emerald-800/80 shadow-slate-950/50 " : "bg-white/80 border-zinc-200/60 shadow-zinc-400/50 hover:shadow-emerald-400/50 backdrop-blur-md"}">
             <div class="p-6 sm:p-10 space-y-6">
                 
                 <div id="drop-zone" 

@@ -88,22 +88,20 @@ const StateManager = {
                 ${DetectionDashboard.render(this.state, lang)}
             </main>
             
-            ${
-              this.state.toast
-                ? `
-                <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 ease-out flex items-center p-4 rounded-xl shadow-xl border ${
-                  this.state.toast.type === "success"
-                    ? "bg-emerald-500 text-white border-emerald-400"
-                    : this.state.toast.type === "warning"
-                      ? "bg-amber-500 text-white border-amber-400"
-                      : "bg-slate-800 text-white border-slate-700"
-                }">
+            ${this.state.toast
+        ? `
+                <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 ease-out flex items-center p-4 rounded-xl shadow-xl border ${this.state.toast.type === "success"
+          ? "bg-emerald-500 text-white border-emerald-400"
+          : this.state.toast.type === "warning"
+            ? "bg-amber-500 text-white border-amber-400"
+            : "bg-slate-800 text-white border-slate-700"
+        }">
                     <i data-lucide="${this.state.toast.type === "success" ? "check-circle" : "alert-triangle"}" class="w-5 h-5 mr-3"></i>
                     <span class="font-medium text-sm">${this.state.toast.message}</span>
                 </div>
             `
-                : ""
-            }
+        : ""
+      }
 
             <footer class="w-full mt-24 border-t transition-all duration-300 ${this.state.isDarkMode ? "bg-slate-950 border-slate-900 text-slate-400" : "bg-zinc-50 border-zinc-200/80 text-zinc-600"}">
                 
@@ -113,7 +111,9 @@ const StateManager = {
                     <!-- Kolom Brand -->
                     <div class="space-y-4">
                         <div class="flex items-center gap-2">
-                            <span class="text-xl">🌾</span>
+                            <span class="text-xl">
+                            <img src="../img/logo-padiguard.png" alt="PadiGuard Logo" class="w-10 h-10 rounded-full border-2 border-emerald-500 shadow-md shadow-emerald-500/20">
+                            </span>
                             <h3 class="text-lg font-black tracking-tight ${this.state.isDarkMode ? "text-white" : "text-slate-900"}">
                                 Padi<span class="text-emerald-600 dark:text-emerald-400">Guard</span>
                             </h3>

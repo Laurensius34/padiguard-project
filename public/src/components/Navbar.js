@@ -11,7 +11,7 @@ const Navbar = {
             
             <div class="flex items-center gap-2.5 cursor-pointer group select-none" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <div class="text-2xl transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
-                    🌾
+                    <img src="../img/logo-padiguard.png" alt="PadiGuard Logo" class="w-10 h-10 rounded-full border-2 border-emerald-500 shadow-md shadow-emerald-500/20">
                 </div>
                 <span class="text-lg font-black tracking-tight bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent transform transition-all duration-300 group-hover:brightness-110">
                     ${lang.brand || "PadiGuard"}

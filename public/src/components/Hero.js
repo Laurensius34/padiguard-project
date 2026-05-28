@@ -15,14 +15,14 @@ const Hero = {
             </div>
             
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight ${state.isDarkMode ? "text-slate-100" : "text-slate-900"} leading-[1.15]">
-                Deteksi Hama Padi <br class="hidden sm:inline">
+                ${lang.taglineA} <br class="hidden sm:inline">
                 <span class="bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                    Lebih Cepat & Akurat
+                    ${lang.taglineB}
                 </span>
             </h1>
             
             <p class="text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed ${state.isDarkMode ? "text-slate-400" : "text-slate-600"}">
-                ${lang.onlineDesc}. Unggah foto daun padi Anda dan peroleh penanganan instan untuk mengamankan produktivitas panen sawah Anda.
+                ${lang.onlineDesc}
             </p>
             
             <div class="pt-4 flex justify-center lg:justify-start">
