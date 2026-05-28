@@ -28,3 +28,5 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`PadiGuard running successfully on http://localhost:${PORT}`);
 });
+
+export default app;
